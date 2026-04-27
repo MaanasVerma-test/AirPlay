@@ -41,7 +41,7 @@ function resizeCanvas() {
 
 function toggleMute() {
   store.muted = !store.muted;
-  els.muteBtn.textContent = store.muted ? "Unmute" : "Mute";
+  els.muteBtn.textContent = store.muted ? "volume_off" : "volume_up";
   audio.toggleMute(store.muted);
 }
 
