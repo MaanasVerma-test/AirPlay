@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AIRPLAY - Music Without Boundaries</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#8f0041",
+                        "surface-bright": "#39393c",
+                        "on-tertiary-fixed": "#3f0019",
+                        "surface-variant": "#353438",
+                        "on-surface": "#e4e1e6",
+                        "tertiary-fixed": "#ffd9e0",
+                        "primary-fixed": "#7df4ff",
+                        "surface": "#131316",
+                        "on-surface-variant": "#b9cacb",
+                        "tertiary-container": "#ffccd6",
+                        "secondary": "#e5b4ff",
+                        "on-secondary-container": "#fef0ff",
+                        "background": "#131316",
+                        "surface-container": "#1f1f22",
+                        "surface-container-highest": "#353438",
+                        "on-primary-fixed-variant": "#004f54",
+                        "on-tertiary-container": "#bb0058",
+                        "primary-container": "#00f0ff",
+                        "on-error": "#690005",
+                        "on-primary": "#00363a",
+                        "surface-container-lowest": "#0e0e11",
+                        "secondary-fixed-dim": "#e5b4ff",
+                        "tertiary": "#fff3f4",
+                        "on-secondary": "#4f0077",
+                        "on-primary-container": "#006970",
+                        "primary-fixed-dim": "#00dbe9",
+                        "error-container": "#93000a",
+                        "secondary-container": "#ad00fe",
+                        "primary": "#dbfcff",
+                        "inverse-on-surface": "#303033",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#ffb1c3",
+                        "outline-variant": "#3b494b",
+                        "on-secondary-fixed": "#30004b",
+                        "surface-tint": "#00dbe9",
+                        "on-background": "#e4e1e6",
+                        "inverse-surface": "#e4e1e6",
+                        "inverse-primary": "#006970",
+                        "on-primary-fixed": "#002022",
+                        "on-tertiary": "#66002c",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131316",
+                        "outline": "#849495",
+                        "surface-container-low": "#1b1b1e",
+                        "surface-container-high": "#2a2a2d",
+                        "secondary-fixed": "#f5d9ff",
+                        "on-secondary-fixed-variant": "#7000a7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-padding": "40px",
+                        "focus-area-margin": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .inner-glow-white-10 {
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .neon-pulse {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-zinc-950/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-['Space_Grotesk'] tracking-tight">AIRPLAY</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-['Space_Grotesk'] tracking-tight" href="#">Features</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Instruments</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Stage</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Tutorials</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<a href="app.html" class="inline-flex bg-cyan-400/10 text-cyan-400 px-6 py-2 rounded-full border border-cyan-400/50 font-['Space_Grotesk'] font-bold hover:bg-cyan-400 hover:text-on-primary transition-all active:scale-95 duration-150">Connect Camera</a>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-cyan-400 transition-colors">settings</span>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-cyan-400 transition-colors">account_circle</span>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Airplay Drumming Experience" class="w-full h-full object-cover opacity-40 mix-blend-lighten" data-alt="Cinematic shot of a musician playing invisible drums in a dark studio filled with cyan neon lasers and holographic particles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-IOIrDSFTkZufdUS9QGFzTrRDEJbg4FBGiS2wnxmeqT-lXWxoToLc6jTomGjP9cfAetptOM5iwdQ90oUnG3xZH87HHfV0SsTUpiJUAnd6V3XquAp6MCJVmHZOyrILPeH8cl75TIOTQmN2jUPK76u_j1T0KH_jQzV0fHadvVco1ryfe8H6hBBchfteQJCthtUz6UeK2IQytDGo6v6qojzFslCTUmNVEapPolih8VZV3guSL-RFKGgu_Axkfrd5E55Hwl9Ew5KEU1I"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+<h1 class="font-display-xl text-display-xl text-white mb-6 drop-shadow-[0_0_15px_rgba(0,240,255,0.8)]">
+                    Music Without <span class="text-cyan-400">Boundaries</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                    Transform your physical motion into digital sound. No hardware, no wires, just pure expression using advanced hand-tracking technology.
+                </p>
+<a href="app.html" class="inline-flex px-10 py-5 rounded-full bg-cyan-400 text-on-primary font-headline-md text-headline-md neon-pulse hover:scale-105 active:scale-95 transition-all items-center gap-4 mx-auto group">
+        Start Performing
+        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">bolt</span>
+    </a>
+</div>
+<!-- Air-Cursor Decoration -->
+<div class="absolute top-1/2 left-1/4 w-32 h-32 border-2 border-cyan-400/30 rounded-full animate-pulse flex items-center justify-center">
+<div class="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_10px_cyan]"></div>
+</div>
+<div class="absolute bottom-1/3 right-1/4 w-24 h-24 border-2 border-secondary/30 rounded-full animate-bounce flex items-center justify-center" style="animation-duration: 4s;">
+<div class="w-1.5 h-1.5 bg-secondary rounded-full shadow-[0_0_10px_#e5b4ff]"></div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="py-32 px-container-padding bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="font-display-lg text-display-lg text-white mb-4">Master The Air</h2>
+<p class="font-body-md text-body-md text-zinc-500 uppercase tracking-widest">Three steps to virtual virtuosity</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card p-10 rounded-[40px] group hover:border-cyan-400/50 transition-all duration-500">
+<div class="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-8 text-cyan-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">videocam</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Connect Camera</h3>
+<p class="text-zinc-400 font-body-md">Use any standard webcam. Our AI maps 21 key points on your hands in real-time with sub-millisecond latency.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-10 rounded-[40px] group hover:border-secondary/50 transition-all duration-500">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-8 text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">piano</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Choose Instrument</h3>
+<p class="text-zinc-400 font-body-md">Select from a curated library of spatial drums, ethereal synths, and responsive air-guitars.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-10 rounded-[40px] group hover:border-cyan-400/50 transition-all duration-500">
+<div class="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-8 text-cyan-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">auto_fix_high</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-4">Play in Air</h3>
+<p class="text-zinc-400 font-body-md">Strike, pluck, or wave. The stage responds to your velocity and spatial position effortlessly.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Spotlight (Bento Style) -->
+<section class="py-24 px-container-padding">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 h-auto md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative glass-card rounded-[40px] overflow-hidden group">
+<img alt="Tech Interface" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract futuristic interface with glowing neon circuits and flowing digital energy patterns in cyan and purple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTjwfZw4bfOu-3fjVJQ0m-n0wHPuJu9z8yb2Xn73SDaY00PNep9ncMMwJSVpQCtdVcwdqOyZi8SJFEwo-VKIGYa7fSD8JukaMiOKKUTg4gCHfPKzefcXIbkdHOk1mK3lUu9x6753PhTONxD5iYCK7LRp_GjDPRa0hORSetYnT3GFBbYwWXdK_Iq9RQ-0G2ArA6dJEUiAACNUqkI1o7Uaf3Ai06R9D76kAh6mEM6DxI6bV8ctm3O6ZvQBF3UvJlXjBQXjRuT-PTAeQ"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end">
+<span class="px-4 py-1 bg-cyan-400/20 text-cyan-400 rounded-full w-fit mb-4 font-label-caps text-label-caps">PRO TECHNOLOGY</span>
+<h4 class="font-display-lg text-display-lg text-white mb-4 leading-tight">Neural Hand Engine v4.0</h4>
+<p class="text-zinc-400 max-w-sm">The world's most precise hand-to-MIDI translation layer, built for professional performers.</p>
+</div>
+</div>
+<div class="md:col-span-2 glass-card rounded-[40px] p-12 flex flex-col justify-center">
+<div class="flex items-center gap-6 mb-6">
+<span class="material-symbols-outlined text-cyan-400 text-5xl">cloud_sync</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white">Live Sync</h4>
+<p class="text-zinc-400">Stream your MIDI data directly to Ableton, Logic, or FL Studio.</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-1 glass-card rounded-[40px] p-8 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-secondary text-5xl mb-4">spatial_audio_off</span>
+<h5 class="font-bold text-white mb-2">3D Audio</h5>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Spatial Sound</p>
+</div>
+<div class="md:col-span-1 glass-card rounded-[40px] p-8 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-cyan-400 text-5xl mb-4">group</span>
+<h5 class="font-bold text-white mb-2">Jams</h5>
+<p class="text-xs text-zinc-500 uppercase tracking-widest">Multiplayer</p>
+</div>
+</div>
+</section>
+<!-- Instrument Selection SideNav Context (Floating Panel Mock) -->
+<aside class="fixed left-4 top-24 w-64 flex flex-col z-40 bg-zinc-900/20 backdrop-blur-2xl rounded-r-2xl border-r border-white/10 h-[calc(100vh-160px)] p-6 transition-transform -translate-x-full lg:translate-x-0">
+<div class="mb-10">
+<h6 class="text-cyan-400 font-bold font-['Space_Grotesk'] uppercase text-xs tracking-widest mb-1">The Wings</h6>
+<p class="text-zinc-500 text-[10px] uppercase tracking-widest">Instrument Selection</p>
+</div>
+<nav class="flex flex-col gap-4 flex-grow">
+<button class="flex items-center gap-4 p-4 rounded-xl bg-cyan-500/20 text-cyan-400 border-r-4 border-cyan-400 hover:translate-x-1 duration-300 transition-all font-['Space_Grotesk'] uppercase text-xs tracking-widest">
+<span>🥁</span> Drums
+                </button>
+<button class="flex items-center gap-4 p-4 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-white/5 hover:translate-x-1 duration-300 transition-all font-['Space_Grotesk'] uppercase text-xs tracking-widest">
+<span>🎸</span> Guitar
+                </button>
+<button class="flex items-center gap-4 p-4 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-white/5 hover:translate-x-1 duration-300 transition-all font-['Space_Grotesk'] uppercase text-xs tracking-widest">
+<span>🎹</span> Piano
+                </button>
+<button class="flex items-center gap-4 p-4 rounded-xl text-zinc-500 hover:text-zinc-300 hover:bg-white/5 hover:translate-x-1 duration-300 transition-all font-['Space_Grotesk'] uppercase text-xs tracking-widest">
+<span class="material-symbols-outlined text-sm">blur_on</span> Synth
+                </button>
+</nav>
+<div class="pt-8 border-t border-white/10 flex flex-col gap-4">
+<button class="flex items-center gap-3 text-zinc-500 hover:text-zinc-300 transition-colors font-['Space_Grotesk'] uppercase text-[10px] tracking-widest">
+<span class="material-symbols-outlined text-sm">camera_front</span> Calibration
+                </button>
+<button class="flex items-center gap-3 text-zinc-500 hover:text-zinc-300 transition-colors font-['Space_Grotesk'] uppercase text-[10px] tracking-widest">
+<span class="material-symbols-outlined text-sm">help_outline</span> Help
+                </button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile only or Dash context) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-12 py-4 bg-zinc-950/60 backdrop-blur-xl rounded-t-[40px] border-t border-white/20 w-full mb-0 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 hover:text-white transition-all active:scale-110">
+<span class="material-symbols-outlined">fiber_manual_record</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase mt-1">Record</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-cyan-400/10 text-cyan-400 rounded-full p-4 ring-1 ring-cyan-400/50 active:scale-110">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase mt-1">Playback</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 hover:text-white transition-all active:scale-110">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 hover:text-white transition-all active:scale-110">
+<span class="material-symbols-outlined">magic_button</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-bold uppercase mt-1">Effects</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-4 opacity-60 bg-black py-8 border-t border-zinc-900 mt-20">
+<div class="flex gap-8 mb-4">
+<a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Privacy</a>
+<a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Terms</a>
+<a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Discord</a>
+<a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Github</a>
+</div>
+<p class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-[0.2em]">© 2024 AIRPLAY VIRTUAL. BEYOND PHYSICAL LIMITS.</p>
+</footer>
+</body></html>
