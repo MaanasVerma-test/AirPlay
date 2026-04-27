@@ -76,6 +76,106 @@ const SELECT_HTML = `
     </div>
   </div>
 </div>
+
+<!-- How It Works -->
+<section class="mt-24 mb-16">
+<div class="text-center mb-16">
+<h2 class="font-['Space_Grotesk'] text-[48px] font-semibold text-white mb-3">How It <span class="text-cyan-400">Works</span></h2>
+<p class="text-zinc-400 text-sm uppercase tracking-widest">Three steps to virtual virtuosity</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 p-10 rounded-[40px] group hover:border-cyan-400/50 transition-all duration-500">
+<div class="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-8 text-cyan-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">videocam</span>
+</div>
+<h3 class="font-['Space_Grotesk'] text-[32px] font-medium text-white mb-4">Connect Camera</h3>
+<p class="text-zinc-400">Use any standard webcam. Our AI maps 21 key points on your hands in real-time with sub-millisecond latency.</p>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 p-10 rounded-[40px] group hover:border-[#e5b4ff]/50 transition-all duration-500">
+<div class="w-16 h-16 bg-[#e5b4ff]/10 rounded-2xl flex items-center justify-center mb-8 text-[#e5b4ff] group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">piano</span>
+</div>
+<h3 class="font-['Space_Grotesk'] text-[32px] font-medium text-white mb-4">Choose Instrument</h3>
+<p class="text-zinc-400">Select from a curated library of spatial drums, ethereal synths, and responsive air-guitars.</p>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 p-10 rounded-[40px] group hover:border-cyan-400/50 transition-all duration-500">
+<div class="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center mb-8 text-cyan-400 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">auto_fix_high</span>
+</div>
+<h3 class="font-['Space_Grotesk'] text-[32px] font-medium text-white mb-4">Play in Air</h3>
+<p class="text-zinc-400">Strike, pluck, or wave. The stage responds to your velocity and spatial position effortlessly.</p>
+</div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="mb-16">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-3xl p-8 text-center hover:border-cyan-400/30 transition-all">
+<div class="font-['Space_Grotesk'] text-[48px] font-bold text-cyan-400 mb-2">21</div>
+<p class="text-zinc-500 text-xs uppercase tracking-widest">Hand Points Tracked</p>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-3xl p-8 text-center hover:border-[#e5b4ff]/30 transition-all">
+<div class="font-['Space_Grotesk'] text-[48px] font-bold text-[#e5b4ff] mb-2">&lt;5ms</div>
+<p class="text-zinc-500 text-xs uppercase tracking-widest">Latency</p>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-3xl p-8 text-center hover:border-cyan-400/30 transition-all">
+<div class="font-['Space_Grotesk'] text-[48px] font-bold text-cyan-400 mb-2">60</div>
+<p class="text-zinc-500 text-xs uppercase tracking-widest">FPS Tracking</p>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-3xl p-8 text-center hover:border-[#e5b4ff]/30 transition-all">
+<div class="font-['Space_Grotesk'] text-[48px] font-bold text-[#e5b4ff] mb-2">3+</div>
+<p class="text-zinc-500 text-xs uppercase tracking-widest">Instruments</p>
+</div>
+</div>
+</section>
+
+<!-- Tech Specs -->
+<section class="mb-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-[40px] p-12">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-cyan-400 text-4xl">memory</span>
+<h3 class="font-['Space_Grotesk'] text-[24px] font-semibold text-white">Neural Hand Engine v4.0</h3>
+</div>
+<ul class="space-y-4 text-zinc-400">
+<li class="flex items-start gap-3"><span class="text-cyan-400 mt-1">●</span>MediaPipe hand landmark detection with 21 key points per hand</li>
+<li class="flex items-start gap-3"><span class="text-cyan-400 mt-1">●</span>Pose estimation for elbow tracking in drum mode</li>
+<li class="flex items-start gap-3"><span class="text-cyan-400 mt-1">●</span>Velocity detection based on wrist acceleration history</li>
+<li class="flex items-start gap-3"><span class="text-cyan-400 mt-1">●</span>Real-time canvas overlay with particle effects and ripples</li>
+</ul>
+</div>
+<div class="bg-white/[0.03] backdrop-blur-[40px] border border-white/10 rounded-[40px] p-12">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-[#e5b4ff] text-4xl">graphic_eq</span>
+<h3 class="font-['Space_Grotesk'] text-[24px] font-semibold text-white">Audio Engine</h3>
+</div>
+<ul class="space-y-4 text-zinc-400">
+<li class="flex items-start gap-3"><span class="text-[#e5b4ff] mt-1">●</span>Web Audio API with low-latency sample playback</li>
+<li class="flex items-start gap-3"><span class="text-[#e5b4ff] mt-1">●</span>Velocity-sensitive dynamics for realistic expression</li>
+<li class="flex items-start gap-3"><span class="text-[#e5b4ff] mt-1">●</span>Multi-sample drum kit with kick, snare, hi-hat, and toms</li>
+<li class="flex items-start gap-3"><span class="text-[#e5b4ff] mt-1">●</span>Chord-based guitar engine with strumming detection</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/10 pt-12 pb-24 mt-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="font-['Space_Grotesk'] text-xl font-black text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]">AIRPLAY</span>
+<span class="text-zinc-600 text-xs">Beyond Physical Limits</span>
+</div>
+<div class="flex gap-8">
+<a href="features.html" class="text-zinc-500 hover:text-cyan-400 transition-colors text-xs uppercase tracking-widest font-['Space_Grotesk']">Features</a>
+<a href="features.html#tutorials" class="text-zinc-500 hover:text-cyan-400 transition-colors text-xs uppercase tracking-widest font-['Space_Grotesk']">Tutorials</a>
+<a href="https://github.com/MaanasVerma-test/AirPlay" target="_blank" class="text-zinc-500 hover:text-cyan-400 transition-colors text-xs uppercase tracking-widest font-['Space_Grotesk']">Github</a>
+</div>
+<p class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-[0.2em]">© 2025 AIRPLAY VIRTUAL</p>
+</div>
+</footer>
+
 </div>
 </main>
 <!-- Bottom Nav -->
