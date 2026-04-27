@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#8f0041",
+                    "surface-bright": "#39393c",
+                    "on-tertiary-fixed": "#3f0019",
+                    "surface-variant": "#353438",
+                    "on-surface": "#e4e1e6",
+                    "tertiary-fixed": "#ffd9e0",
+                    "primary-fixed": "#7df4ff",
+                    "surface": "#131316",
+                    "on-surface-variant": "#b9cacb",
+                    "tertiary-container": "#ffccd6",
+                    "secondary": "#e5b4ff",
+                    "on-secondary-container": "#fef0ff",
+                    "background": "#131316",
+                    "surface-container": "#1f1f22",
+                    "surface-container-highest": "#353438",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-tertiary-container": "#bb0058",
+                    "primary-container": "#00f0ff",
+                    "on-error": "#690005",
+                    "on-primary": "#00363a",
+                    "surface-container-lowest": "#0e0e11",
+                    "secondary-fixed-dim": "#e5b4ff",
+                    "tertiary": "#fff3f4",
+                    "on-secondary": "#4f0077",
+                    "on-primary-container": "#006970",
+                    "primary-fixed-dim": "#00dbe9",
+                    "error-container": "#93000a",
+                    "secondary-container": "#ad00fe",
+                    "primary": "#dbfcff",
+                    "inverse-on-surface": "#303033",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#ffb1c3",
+                    "outline-variant": "#3b494b",
+                    "on-secondary-fixed": "#30004b",
+                    "surface-tint": "#00dbe9",
+                    "on-background": "#e4e1e6",
+                    "inverse-surface": "#e4e1e6",
+                    "inverse-primary": "#006970",
+                    "on-primary-fixed": "#002022",
+                    "on-tertiary": "#66002c",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#131316",
+                    "outline": "#849495",
+                    "surface-container-low": "#1b1b1e",
+                    "surface-container-high": "#2a2a2d",
+                    "secondary-fixed": "#f5d9ff",
+                    "on-secondary-fixed-variant": "#7000a7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "container-padding": "40px",
+                    "focus-area-margin": "64px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Space Grotesk"],
+                    "display-xl": ["Space Grotesk"],
+                    "label-caps": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "display-xl": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131316; margin: 0; overflow: hidden; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { backdrop-filter: blur(40px); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-glow { filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6)); }
+        .instrument-overlay { pointer-events: none; }
+        .camera-background { position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.4) contrast(1.2); }
+        .visualizer-bar { transition: height 0.1s ease; }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Full Screen Camera Feed -->
+<img class="camera-background" data-alt="First-person perspective of hands playing a piano in a dark studio with neon blue and purple ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5T4OVsXQMbs9PgeIb51pkE-J4B7qh6lmWDKf4pylsR2gJAX6G7XbuD-eNk7Bl9DeApISjqq4pXOXuf1BftoOEphsURp99PGNI9kJj-GHYW03_xujJbn6meJ5o2f5CG63Li_u-VsPH2LAjGmMO5uWMHP-BLax7DnsifuAANjWJ-nAp_vTUHnZ0Sdxhh8I6zoAQOx7Wo3FlWc6msQWbWYrRxyfwavWfRWCdWRIvp9BAP1TQPTiqZbhJ6TnXwLN70byoGijXw6d-2FQ"/>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-zinc-950/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)]">
+<div class="text-2xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-['Space_Grotesk']">
+            AIRPLAY
+        </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Stage</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Features</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Instruments</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="#">Tutorials</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-bold text-sm tracking-tight hover:scale-105 active:scale-95 transition-all">
+                Connect Camera
+            </button>
+<div class="flex gap-4 text-zinc-400">
+<span class="material-symbols-outlined cursor-pointer hover:text-white" data-icon="settings">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-white" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar (The Wings) -->
+<aside class="fixed left-4 top-24 w-64 flex flex-col z-40 bg-zinc-900/20 backdrop-blur-2xl rounded-r-2xl border-r border-white/10 h-[calc(100vh-160px)] p-6">
+<div class="mb-8">
+<h2 class="text-cyan-400 font-bold font-['Space_Grotesk'] uppercase text-xs tracking-widest">The Wings</h2>
+<p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Instrument Selection</p>
+</div>
+<div class="space-y-4 flex-grow">
+<!-- Active Item: Drums (Assumed context) -->
+<div class="flex items-center gap-4 p-3 bg-cyan-500/20 text-cyan-400 border-r-4 border-cyan-400 font-['Space_Grotesk'] uppercase text-xs tracking-widest hover:translate-x-1 duration-300 cursor-pointer">
+<span class="text-xl">🥁</span>
+<span>Drums</span>
+</div>
+<div class="flex items-center gap-4 p-3 text-zinc-500 hover:text-zinc-300 font-['Space_Grotesk'] uppercase text-xs tracking-widest hover:translate-x-1 duration-300 cursor-pointer hover:bg-white/5">
+<span class="text-xl">🎸</span>
+<span>Guitar</span>
+</div>
+<div class="flex items-center gap-4 p-3 text-zinc-500 hover:text-zinc-300 font-['Space_Grotesk'] uppercase text-xs tracking-widest hover:translate-x-1 duration-300 cursor-pointer hover:bg-white/5">
+<span class="text-xl">🎹</span>
+<span>Piano</span>
+</div>
+<div class="flex items-center gap-4 p-3 text-zinc-500 hover:text-zinc-300 font-['Space_Grotesk'] uppercase text-xs tracking-widest hover:translate-x-1 duration-300 cursor-pointer hover:bg-white/5">
+<span class="material-symbols-outlined text-xl" data-icon="blur_on">blur_on</span>
+<span>Synth</span>
+</div>
+</div>
+<div class="border-t border-white/10 pt-6 space-y-4">
+<div class="flex items-center gap-4 p-3 text-zinc-500 hover:text-zinc-300 font-['Space_Grotesk'] uppercase text-xs tracking-widest transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xl" data-icon="camera_front">camera_front</span>
+<span>Calibration</span>
+</div>
+<div class="flex items-center gap-4 p-3 text-zinc-500 hover:text-zinc-300 font-['Space_Grotesk'] uppercase text-xs tracking-widest transition-all cursor-pointer">
+<span class="material-symbols-outlined text-xl" data-icon="help_outline">help_outline</span>
+<span>Help</span>
+</div>
+</div>
+</aside>
+<!-- Main Performance Area (The Stage) -->
+<main class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<!-- Floating Instrument Overlay (Drums) -->
+<div class="grid grid-cols-4 gap-12 max-w-4xl mx-auto opacity-80 scale-110 pointer-events-none">
+<div class="w-40 h-40 rounded-full border-4 border-cyan-400/40 bg-cyan-400/10 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+<div class="w-12 h-12 rounded-full bg-cyan-400/30 blur-xl"></div>
+</div>
+<div class="w-48 h-48 rounded-full border-4 border-secondary/40 bg-secondary/10 backdrop-blur-md flex items-center justify-center shadow-[0_0_40px_rgba(229,180,255,0.2)] translate-y-12">
+<div class="w-16 h-16 rounded-full bg-secondary/30 blur-xl"></div>
+</div>
+<div class="w-48 h-48 rounded-full border-4 border-secondary/40 bg-secondary/10 backdrop-blur-md flex items-center justify-center shadow-[0_0_40px_rgba(229,180,255,0.2)] translate-y-12">
+<div class="w-16 h-16 rounded-full bg-secondary/30 blur-xl"></div>
+</div>
+<div class="w-40 h-40 rounded-full border-4 border-cyan-400/40 bg-cyan-400/10 backdrop-blur-md flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.2)]">
+<div class="w-12 h-12 rounded-full bg-cyan-400/30 blur-xl"></div>
+</div>
+</div>
+<!-- Right Side Floating Controls (Record & Effects) -->
+<div class="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-6">
+<div class="glass-panel p-6 rounded-3xl flex flex-col items-center gap-6 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center gap-2">
+<span class="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">Recording</span>
+<button class="w-16 h-16 rounded-full bg-red-500/20 border-2 border-red-500 flex items-center justify-center text-red-500 shadow-[0_0_20px_rgba(239,68,68,0.3)] hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl" data-icon="fiber_manual_record" data-weight="fill">fiber_manual_record</span>
+</button>
+<span class="text-[12px] font-['Space_Grotesk'] text-zinc-300 font-mono">00:00:00</span>
+</div>
+<div class="h-px w-full bg-white/10"></div>
+<div class="flex flex-col items-center gap-4">
+<span class="text-[10px] text-zinc-500 font-bold tracking-widest uppercase">Master FX</span>
+<div class="flex flex-col gap-3">
+<div class="px-4 py-2 rounded-full bg-secondary-container/20 border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-tighter flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary shadow-[0_0_8px_rgba(229,180,255,1)]"></span>
+                            Reverb
+                        </div>
+<div class="px-4 py-2 rounded-full bg-zinc-800/40 border border-white/10 text-zinc-500 text-[10px] font-bold uppercase tracking-tighter flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-zinc-600"></span>
+                            Echo
+                        </div>
+<div class="px-4 py-2 rounded-full bg-primary-container/20 border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-tighter flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_8px_rgba(0,219,233,1)]"></span>
+                            Distortion
+                        </div>
+</div>
+</div>
+</div>
+<!-- Spatial Slider Placeholder -->
+<div class="glass-panel p-4 rounded-full flex flex-col items-center gap-4 h-64">
+<span class="material-symbols-outlined text-zinc-500 text-sm" data-icon="volume_up">volume_up</span>
+<div class="w-1 bg-zinc-800 rounded-full flex-grow relative flex items-center justify-center">
+<div class="absolute bottom-1/4 w-1 bg-cyan-400 rounded-full h-1/2"></div>
+<div class="absolute bottom-3/4 w-4 h-4 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] border border-cyan-400 -translate-y-1/2 hover:scale-125 transition-transform cursor-pointer"></div>
+</div>
+<span class="text-[10px] text-zinc-500 font-bold">VOL</span>
+</div>
+</div>
+<!-- Real-time Visualizer at Bottom -->
+<div class="absolute bottom-32 left-0 right-0 px-24 flex items-end justify-center gap-1.5 h-32 opacity-60">
+<!-- Simulated Audio Bars -->
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-8"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-16"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-24"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-32"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-28"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-12"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-20"></div>
+<div class="visualizer-bar w-2 bg-secondary/80 rounded-t-full h-40"></div>
+<div class="visualizer-bar w-2 bg-secondary/80 rounded-t-full h-48"></div>
+<div class="visualizer-bar w-2 bg-secondary/80 rounded-t-full h-40"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-20"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-32"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-24"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-16"></div>
+<div class="visualizer-bar w-2 bg-cyan-400/80 rounded-t-full h-8"></div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-12 py-4 bg-zinc-950/60 backdrop-blur-xl rounded-t-[40px] border-t border-white/20 w-3/4 mx-auto mb-4 shadow-[0_-10px_40px_rgba(0,0,0,0.8)]">
+<div class="flex flex-col items-center justify-center bg-cyan-400/10 text-cyan-400 rounded-full p-4 ring-1 ring-cyan-400/50 scale-110 glow-intensity-high font-['Space_Grotesk'] text-[10px] font-bold uppercase cursor-pointer transition-all hover:text-white">
+<span class="material-symbols-outlined mb-1" data-icon="fiber_manual_record">fiber_manual_record</span>
+            Record
+        </div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 font-['Space_Grotesk'] text-[10px] font-bold uppercase cursor-pointer transition-all hover:text-white">
+<span class="material-symbols-outlined mb-1" data-icon="play_circle">play_circle</span>
+            Playback
+        </div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 font-['Space_Grotesk'] text-[10px] font-bold uppercase cursor-pointer transition-all hover:text-white">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+            Library
+        </div>
+<div class="flex flex-col items-center justify-center text-zinc-500 p-4 font-['Space_Grotesk'] text-[10px] font-bold uppercase cursor-pointer transition-all hover:text-white">
+<span class="material-symbols-outlined mb-1" data-icon="magic_button">magic_button</span>
+            Effects
+        </div>
+</nav>
+<!-- Air-Cursor Visualization -->
+<div class="fixed pointer-events-none z-[100] w-12 h-12 border-2 border-white rounded-full flex items-center justify-center left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-difference">
+<div class="w-1.5 h-1.5 bg-white rounded-full"></div>
+<div class="absolute inset-0 border border-white/30 rounded-full scale-150 animate-pulse"></div>
+</div>
+</body></html>
