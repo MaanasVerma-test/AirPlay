@@ -19,7 +19,7 @@ const SELECT_HTML = `
 </div>
 </header>
 <!-- Main Content -->
-<main class="pt-28 px-12 pb-32 min-h-screen relative overflow-y-auto">
+<main class="pt-28 px-12 pb-32 min-h-screen relative">
 <div class="absolute inset-0 z-0 pointer-events-none opacity-20">
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent blur-sm"></div>
 <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-[#e5b4ff] to-transparent blur-sm"></div>
