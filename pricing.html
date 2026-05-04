@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AIRPLAY - Pricing</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#131316",
+                        "background": "#131316",
+                        "primary": "#dbfcff",
+                        "primary-container": "#00f0ff",
+                        "on-surface": "#e4e1e6",
+                        "on-surface-variant": "#b9cacb",
+                        "secondary": "#e5b4ff",
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 240, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+        .text-gradient {
+            background: linear-gradient(to bottom, #ffffff, #00f0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-zinc-950/40 backdrop-blur-3xl border-b border-white/10">
+    <div class="flex items-center gap-8">
+        <a href="index.html" class="text-2xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-['Space_Grotesk'] hover:scale-105 transition-transform">AIRPLAY</a>
+        <nav class="hidden md:flex gap-6">
+            <a class="text-zinc-400 font-medium font-['Space_Grotesk'] hover:text-cyan-400 transition-all" href="features.html">Features</a>
+            <a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-['Space_Grotesk']" href="pricing.html">Pricing</a>
+            <a class="text-zinc-400 font-medium font-['Space_Grotesk'] hover:text-cyan-400 transition-all" href="app.html">Instruments</a>
+        </nav>
+    </div>
+    <div class="flex items-center gap-4">
+        <a href="app.html" class="bg-cyan-400 text-black px-6 py-2 rounded-full font-['Space_Grotesk'] font-bold hover:bg-cyan-300 transition-all">Get Started</a>
+    </div>
+</header>
+
+<main class="pt-40 pb-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-20">
+        <h1 class="font-display-xl text-5xl md:text-7xl text-white mb-6 tracking-tighter">Choose Your <span class="text-cyan-400">Frequency</span></h1>
+        <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">Transparent pricing for creators of all levels. From bedroom jams to professional stage performances.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Starter Plan -->
+        <div class="glass-card rounded-[40px] p-10 flex flex-col h-full">
+            <div class="mb-8">
+                <span class="text-cyan-400 font-bold tracking-widest text-xs uppercase mb-4 block">Beginner</span>
+                <h3 class="text-3xl font-bold text-white mb-2">Starter</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-white">$0</span>
+                    <span class="text-zinc-500">/forever</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    1 Basic Instrument (Drums)
+                </li>
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    Standard Hand Tracking
+                </li>
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    Web-based Performance
+                </li>
+            </ul>
+            <a href="app.html" class="w-full py-4 rounded-2xl border border-white/10 text-white font-bold text-center hover:bg-white/5 transition-all">Start Free</a>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="glass-card rounded-[40px] p-10 flex flex-col h-full relative border-cyan-400/30 scale-105 shadow-[0_0_50px_rgba(0,240,255,0.1)]">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-cyan-400 text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Most Popular</div>
+            <div class="mb-8">
+                <span class="text-cyan-400 font-bold tracking-widest text-xs uppercase mb-4 block">Performer</span>
+                <h3 class="text-3xl font-bold text-white mb-2">Pro</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-white">$15</span>
+                    <span class="text-zinc-500">/month</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+                <li class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    All Core Instruments
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    Ultra-Low Latency Engine
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    MIDI Sync & Export
+                </li>
+                <li class="flex items-center gap-3 text-white">
+                    <span class="material-symbols-outlined text-cyan-400 text-sm">check_circle</span>
+                    Recording Studio Access
+                </li>
+            </ul>
+            <a href="app.html" class="w-full py-4 rounded-2xl bg-cyan-400 text-black font-bold text-center neon-glow hover:scale-105 transition-all">Upgrade to Pro</a>
+        </div>
+
+        <!-- Studio Plan -->
+        <div class="glass-card rounded-[40px] p-10 flex flex-col h-full">
+            <div class="mb-8">
+                <span class="text-secondary font-bold tracking-widest text-xs uppercase mb-4 block">Professional</span>
+                <h3 class="text-3xl font-bold text-white mb-2">Studio</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-white">$39</span>
+                    <span class="text-zinc-500">/month</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-12 flex-grow">
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                    Multi-user Jam Sessions
+                </li>
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                    Custom Soundbank Uploads
+                </li>
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                    Priority AI Training
+                </li>
+                <li class="flex items-center gap-3 text-zinc-400">
+                    <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+                    Whitelabel Performance Mode
+                </li>
+            </ul>
+            <a href="app.html" class="w-full py-4 rounded-2xl border border-secondary/30 text-white font-bold text-center hover:bg-secondary/10 transition-all">Contact Sales</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="mt-32 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-white mb-12 text-center">Frequently Asked <span class="text-cyan-400">Questions</span></h2>
+        <div class="space-y-6">
+            <div class="glass-card p-6 rounded-2xl">
+                <h4 class="text-white font-bold mb-2">Do I need a special camera?</h4>
+                <p class="text-zinc-400 text-sm">No. Any standard 720p or 1080p webcam will work. Our Neural Engine v4.0 is optimized for standard hardware.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl">
+                <h4 class="text-white font-bold mb-2">Can I export my music?</h4>
+                <p class="text-zinc-400 text-sm">Yes, Pro and Studio users can export performances as high-quality WAV files or MIDI data for use in any DAW.</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="w-full flex flex-col items-center gap-4 opacity-60 bg-black py-12 border-t border-zinc-900 mt-20">
+    <div class="flex gap-8 mb-4">
+        <a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Privacy</a>
+        <a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="#">Terms</a>
+        <a class="text-zinc-600 hover:text-cyan-400 transition-colors font-['Space_Grotesk'] text-[10px] tracking-[0.2em]" href="https://github.com/MaanasVerma-test/AirPlay" target="_blank">Github</a>
+    </div>
+    <p class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-[0.2em]">© 2025 AIRPLAY VIRTUAL. BEYOND PHYSICAL LIMITS.</p>
+</footer>
+
+</body>
+</html>

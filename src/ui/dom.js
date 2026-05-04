@@ -4,7 +4,8 @@ const SELECT_HTML = `
 <div class="flex items-center gap-8">
 <a href="index.html" class="text-2xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-['Space_Grotesk'] hover:scale-105 transition-transform">AIRPLAY</a>
 <nav class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
-<a class="text-zinc-400 font-medium hover:text-cyan-200 hover:drop-shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all" href="features.html">Features</a>
+<a class="text-zinc-400 font-medium hover:text-cyan-200 transition-all" href="features.html">Features</a>
+<a class="text-zinc-400 font-medium hover:text-cyan-200 transition-all" href="pricing.html">Pricing</a>
 <a class="text-cyan-400 border-b-2 border-cyan-400 pb-1" href="#">Instruments</a>
 <a class="text-zinc-400 font-medium hover:text-cyan-200 transition-all" href="#" id="goToStageLink">Stage</a>
 <a class="text-zinc-400 font-medium hover:text-cyan-200 transition-all" href="features.html#tutorials">Tutorials</a>
@@ -207,6 +208,7 @@ const PLAY_HTML = `
 <button id="backBtn" class="text-2xl font-black tracking-tighter text-cyan-400 drop-shadow-[0_0_8px_rgba(0,240,255,0.6)] font-['Space_Grotesk'] hover:scale-105 active:scale-95 transition-all cursor-pointer border-none bg-transparent">AIRPLAY</button>
 <nav class="hidden md:flex items-center gap-8">
 <a id="instrumentName" class="text-cyan-400 border-b-2 border-cyan-400 pb-1 font-['Space_Grotesk'] tracking-tight" href="#">Stage</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 transition-all" href="pricing.html">Pricing</a>
 <a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 transition-all" href="features.html">Features</a>
 <a class="text-zinc-400 font-medium font-['Space_Grotesk'] tracking-tight hover:text-cyan-200 transition-all" href="features.html#tutorials">Tutorials</a>
 </nav>
